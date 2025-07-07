@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Appointments</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #333;
+        }
+        #appointmentList {
+            list-style-type: none;
+            padding: 0;
+        }
+        #appointmentList li {
+            background: #f9f9f9;
+            margin-bottom: 10px;
+            padding: 10px;
+            border-radius: 3px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Booked Appointments</h1>
+        <ul id="appointmentList"></ul>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const appointmentList = document.getElementById('appointmentList');
+            
+            // Retrieve appointments from localStorage
+            const appointments = JSON.parse(localStorage.getItem('appointments')) || [];
+
+            if (appointments.length === 0) {
+                appointmentList.innerHTML = '<li>No appointments booked yet.</li>';
+            } else {
+                appointments.forEach((appointment, index) => {
+                    const li = document.createElement('li');
+                    li.textContent = `Appointment ${index + 1}: ${appointment.firstName} ${appointment.lastName} - Phone: ${appointment.phone}`;
+                    appointmentList.appendChild(li);
+                });
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HealthCare - Learn More</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
+    <style>
+        .learn-more__container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        .learn-more__header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        .service__details {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 2rem;
+        }
+        .service__detail {
+            flex: 1 1 300px;
+            background-color: #f9f9f9;
+            border-radius: 10px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        .service__detail:hover {
+            transform: translateY(-5px);
+        }
+        .service__detail h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+        .service__detail ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        .service__detail li {
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+        }
+        .service__detail li::before {
+            content: "\f058";
+            font-family: "Font Awesome 5 Free";
+            font-weight: 900;
+            color: var(--primary-color);
+            margin-right: 0.5rem;
+        }
+        .cta-button {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            text-decoration: none;
+            margin-top: 1rem;
+            transition: background-color 0.3s ease;
+        }
+        .cta-button:hover {
+            background-color: var(--primary-color-dark);
+        }
+        .faq-section {
+            margin-top: 4rem;
+        }
+        .faq-item {
+            margin-bottom: 1rem;
+        }
+        .faq-question {
+            background-color: var(--primary-color-light);
+            color: var(--primary-color);
+            padding: 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .faq-answer {
+            display: none;
+            padding: 1rem;
+            background-color: #f9f9f9;
+            border-radius: 0 0 5px 5px;
+        }
+        .testimonial-section {
+            margin-top: 4rem;
+            text-align: center;
+        }
+        .testimonial-carousel {
+            display: flex;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            gap: 2rem;
+            padding: 2rem 0;
+        }
+        .testimonial-item {
+            flex: 0 0 300px;
+            scroll-snap-align: start;
+            background-color: #f9f9f9;
+            border-radius: 10px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .testimonial-item img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            margin-bottom: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="nav__container">
+            <div class="nav__logo">Health<span>Care</span></div>
+            <ul class="nav__links">
+                <li class="link"><a href="index.html#home">Home</a></li>
+                <li class="link"><a href="index.html#about">About Us</a></li>
+                <li class="link"><a href="index.html#service">Services</a></li>
+                <li class="link"><a href="index.html#pages">Pages</a></li>
+                <li class="link"><a href="index.html#blog">Blog</a></li>
+                <li class="link"><a href="contactus.html">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="section section__container learn-more__container">
+        <div class="learn-more__header">
+            <h2>Learn More About Our Services</h2>
+            <p>Explore the detailed information about the services we provide, designed to cater to your unique healthcare needs.</p>
+        </div>
+
+        <div class="service__details">
+            <div class="service__detail">
+                <h3>Laboratory Test</h3>
+                <p>Our state-of-the-art laboratory offers a wide range of diagnostic tests, ensuring timely and accurate results. We utilize advanced equipment and highly trained professionals to provide you with the best diagnostic experience.</p>
+                <ul>
+                    <li>Blood Tests</li>
+                    <li>Urine Analysis</li>
+                    <li>COVID-19 Testing</li>
+                    <li>Genetic Testing</li>
+                </ul>
+                <p>Our comprehensive testing services are available to help you manage your health proactively.</p>
+                <a href="#" class="cta-button">Schedule a Test</a>
+            </div>
+
+            <div class="service__detail">
+                <h3>Health Check</h3>
+                <p>Regular health checks are essential to maintain your overall well-being. Our health check packages are tailored to fit your age, lifestyle, and specific health needs. We offer preventive screenings and thorough evaluations to help you stay on top of your health.</p>
+                <ul>
+                    <li>Cardiac Health</li>
+                    <li>Diabetes Screening</li>
+                    <li>Comprehensive Health Checkup</li>
+                    <li>Women's Health Packages</li>
+                </ul>
+                <p>Stay proactive and get your health checked regularly with our expert medical team.</p>
+                <a href="#" class="cta-button">Book a Health Check</a>
+            </div>
+
+            <div class="service__detail">
+                <h3>General Dentistry</h3>
+                <p>Our dental services focus on providing comprehensive oral care for patients of all ages. From routine cleanings to advanced dental procedures, our experienced team ensures your dental health is in safe hands.</p>
+                <ul>
+                    <li>Teeth Cleaning and Whitening</li>
+                    <li>Cavity Fillings</li>
+                    <li>Root Canal Treatment</li>
+                    <li>Cosmetic Dentistry</li>
+                </ul>
+                <p>Keep your smile bright and healthy with our personalized dental care solutions.</p>
+                <a href="#" class="cta-button">Schedule a Dental Appointment</a>
+            </div>
+        </div>
+
+        <div class="faq-section">
+            <h2>Frequently Asked Questions</h2>
+            <div class="faq-item">
+                <div class="faq-question">
+                    How often should I get a health check-up?
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    The frequency of health check-ups depends on various factors such as age, gender, and medical history. Generally, it's recommended to have a comprehensive health check-up annually. However, some individuals may need more frequent check-ups based on their specific health conditions or risk factors.
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">
+                    What should I bring to my laboratory test appointment?
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    For your laboratory test appointment, please bring:
+                    <ul>
+                        <li>A valid form of identification</li>
+                        <li>Your insurance card (if applicable)</li>
+                        <li>Any relevant medical records or doctor's orders</li>
+                        <li>A list of current medications you're taking</li>
+                        <li>Fasting information (if required for your specific test)</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">
+                    How long does it take to get laboratory test results?
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    The turnaround time for laboratory test results varies depending on the type of test. Some routine tests may provide results within 24-48 hours, while more complex tests might take several days to a week. Our team will inform you about the expected timeframe for your specific test results during your appointment.
+                </div>
+            </div>
+        </div>
+
+        <div class="testimonial-section">
+            <h2>What Our Patients Say</h2>
+            <div class="testimonial-carousel">
+                <div class="testimonial-item">
+                    <img src="/api/placeholder/80/80" alt="Patient 1">
+                    <h4>John Doe</h4>
+                    <p>"The health check-up experience was fantastic. The staff was professional, and the process was smooth and efficient. I feel more confident about my health now."</p>
+                </div>
+                <div class="testimonial-item">
+                    <img src="/api/placeholder/80/80" alt="Patient 2">
+                    <h4>Jane Smith</h4>
+                    <p>"I was nervous about my dental appointment, but the team made me feel comfortable throughout the procedure. I'm very satisfied with the results!"</p>
+                </div>
+                <div class="testimonial-item">
+                    <img src="/api/placeholder/80/80" alt="Patient 3">
+                    <h4>Mike Johnson</h4>
+                    <p>"The laboratory staff was very knowledgeable and explained the testing process clearly. I received my results promptly, and the follow-up was excellent."</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="section__container footer__container">
+            <div class="footer__col">
+                <h3>Health<span>Care</span></h3>
+                <p>We are honored to be a part of your healthcare journey and committed to delivering compassionate, personalized, and top-notch care every step of the way.</p>
+            </div>
+            <div class="footer__col">
+                <h4>About Us</h4>
+                <p>Home</p>
+                <p>About Us</p>
+                <p>Our Blog</p>
+                <p>Terms & Conditions</p>
+            </div>
+            <div class="footer__col">
+                <h4>Services</h4>
+                <p>Search Terms</p>
+                <p>Advance Search</p>
+                <p>Privacy Policy</p>
+                <p>Suppliers</p>
+                <p>Our Stores</p>
+            </div>
+            <div class="footer__col">
+                <h4>Contact Us</h4>
+                <p>123, ABC Street, INDIA</p>
+                <p>support@care.com</p>
+                <p>(+91) 99999 99999</p>
+            </div>
+        </div>
+    </footer>
+
+    <div class="footer__bar">
+        <div class="footer__bar__content">
+            <p>Copyright © 2023 Web Design. All rights reserved.</p>
+            <div class="footer__socials">
+                <i class="fab fa-facebook"></i>
+                <i class="fab fa-instagram"></i>
+                <i class="fab fa-twitter"></i>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.querySelectorAll('.faq-question').forEach(item => {
+            item.addEventListener('click', event => {
+                const answer = item.nextElementSibling;
+                const icon = item.querySelector('i');
+                if (answer.style.display === 'block') {
+                    answer.style.display = 'none';
+                    icon.classList.remove('fa-chevron-up');
+                    icon.classList.add('fa-chevron-down');
+                } else {
+                    answer.style.display = 'block';
+                    icon.classList.remove('fa-chevron-down');
+                    icon.classList.add('fa-chevron-up');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
