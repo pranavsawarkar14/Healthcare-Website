@@ -51,7 +51,7 @@ def get_config():
     })
 
 # Ensure the appointments file is in the same directory as this script
-CORS(app, resources={r"/book_appointment": {"origins": "http://localhost:5500"}})
+CORS(app, resources={r"/book_appointment": {"origins": "*"}})
 APPOINTMENTS_FILE = os.path.join(os.path.dirname(__file__), 'appointments.txt')
 
 @app.route('/book_appointment', methods=['POST'])
@@ -75,4 +75,6 @@ def book_appointment():
     return jsonify({"message": "Appointment booked successfully"}), 200
 
 if __name__ == '__main__':
-    app.run(debug=os.getenv('FLASK_DEBUG', 'False').lower() == 'true')
+    # For deployment: host='0.0.0.0' makes the server publicly available
+    port = int(os.environ.get('PORT', 5000))
+    app.run(host='0.0.0.0', port=port, debug=os.getenv('FLASK_DEBUG', 'False').lower() == 'true')
